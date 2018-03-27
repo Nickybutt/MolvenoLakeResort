@@ -1,25 +1,28 @@
-﻿using MolvenoLakeResort.Library.Core.Business_Objects;
+﻿using MolvenoLakeResort.Library.Interfaces;
 using System;
 using System.Collections.Generic;
+using MolvenoLakeResort.Library.Core.Business_Objects;
 
 namespace MolvenoLakeResort.Library.Core
 {
-    public class Room: ResortItem
+    public class Room : ResortItem
     {
-        public Room(string name) 
-            : base(name)
-        {
-
-        }
-
         public Room(string name, bool open, int floorLevel, DateTimeOffset openTime, DateTimeOffset opeClosedTime, List<Table> tables)
-            : this(name)
+        : this(name)
         {
             Open = open;
             FloorLevel = floorLevel;
             OpenTime = openTime;
             OpeClosedTime = opeClosedTime;
             Tables = tables;
+        }
+
+        protected Room()
+        {
+        }
+
+        protected Room(string name) : base(name)
+        {
         }
 
         public bool Open { get; set; }

@@ -1,14 +1,17 @@
-﻿using MolvenoLakeResort.Library.Core.Business_Objects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MolvenoLakeResort.Library.Core.Business_Objects;
 
 namespace MolvenoLakeResort.Library.Core
 {
     public class Menu : ResortItem
     {
+        public Menu()
+        {
+        }
+
         public Menu(string name)
             : base(name)
         {
-
         }
 
         public Menu(string name, double priceInEuros, List<Dish> dishes, List<Menu> meals)
@@ -23,8 +26,4 @@ namespace MolvenoLakeResort.Library.Core
         public List<Dish> Dishes { get; set; }
         public List<Menu> Meals { get; set; }
     }
-
-
-
-
 }

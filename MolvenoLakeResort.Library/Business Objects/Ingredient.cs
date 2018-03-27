@@ -2,26 +2,18 @@
 
 namespace MolvenoLakeResort.Library.Core
 {
-    public class Ingredient: ResortItem
+    public class Ingredient : ResortItem
     {
-        public Ingredient(string name)
-            :base(name)
+        public Ingredient(string name) : base(name)
         {
-
         }
 
-        public Ingredient(string name, double addoncharge, double costprice, double unit, double unitPrice)
-            :this(name)
+        public Ingredient(string name, double addOnCharge)
+            : this(name)
         {
-            AddOnCharge = addoncharge;
-            CostPrice = costprice;
-            Unit = unit;
-            UnitPrice = unitPrice;
+            AddOnCharge = addOnCharge;
         }
 
         public double AddOnCharge { get; set; }
-        public double CostPrice { get; set; }
-        public double Unit { get; set; }
-        public double UnitPrice { get; set; }
     }
 }
