@@ -1,14 +1,17 @@
-﻿using MolvenoLakeResort.Library.Core.Business_Objects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MolvenoLakeResort.Library.Core.Business_Objects;
 
 namespace MolvenoLakeResort.Library.Core
 {
     public class Dish : ResortItem
     {
+        public Dish()
+        {
+        }
+
         public Dish(string name)
             : base(name)
         {
-
         }
 
         public Dish(string name, double priceInEuros, int minimumNumberOfPersons, List<Ingredient> ingredients)
