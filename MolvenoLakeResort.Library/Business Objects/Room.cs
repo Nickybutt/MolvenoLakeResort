@@ -17,11 +17,11 @@ namespace MolvenoLakeResort.Library.Core
             Tables = tables;
         }
 
-        protected Room()
+        public Room()
         {
         }
 
-        protected Room(string name) : base(name)
+        public Room(string name) : base(name)
         {
         }
 
