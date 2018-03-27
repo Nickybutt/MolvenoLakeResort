@@ -20,11 +20,11 @@ namespace MolvenoLakeResort.Library.Core
             ShowPrice = showPrice;
         }
 
-        protected Reservation()
+        public Reservation()
         {
         }
 
-        protected Reservation(string name) : base(name)
+        public Reservation(string name) : base(name)
         {
         }
 

@@ -15,11 +15,11 @@ namespace MolvenoLakeResort.Library.Core
             Rooms = rooms;
         }
 
-        protected Restaurant()
+        public Restaurant()
         {
         }
 
-        protected Restaurant(string name) : base(name)
+        public Restaurant(string name) : base(name)
         {
         }
 

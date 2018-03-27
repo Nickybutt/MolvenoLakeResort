@@ -12,11 +12,11 @@ namespace MolvenoLakeResort.Library.Core
             Available = available;
         }
 
-        protected Table()
+        public Table()
         {
         }
 
-        protected Table(string name) : base(name)
+        public Table(string name) : base(name)
         {
         }
 
