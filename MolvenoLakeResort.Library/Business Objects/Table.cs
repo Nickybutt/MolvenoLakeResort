@@ -1,12 +1,22 @@
-﻿using MolvenoLakeResort.Library.Interfaces;
-using System;
+﻿using MolvenoLakeResort.Library.Core.Business_Objects;
 
 namespace MolvenoLakeResort.Library.Core
 {
-    public class Table:IResortItem
+    public class Table:ResortItem
     {
-        public Guid Id { get; }
-        public string Name { get; set; }
+        public Table(string name)
+            : base(name)
+        {
+
+        }
+        public Table(string name, int numSeats, bool reserved, bool available)
+            :this (name)
+        {
+            NumSeats = numSeats;
+            Reserved = reserved;
+            Available = available;
+        }
+
         public int NumSeats { get; set; }
         public bool Reserved { get; set; }
         public bool Available { get; set; }
