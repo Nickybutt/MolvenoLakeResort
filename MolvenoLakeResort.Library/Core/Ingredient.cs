@@ -3,7 +3,7 @@ using System;
 
 namespace MolvenoLakeResort.Library.Core
 {
-    public class Ingredient:IItem
+    public class Ingredient: IResortItem
     {
         public Guid Id { get; }
         public string Name { get; set; }

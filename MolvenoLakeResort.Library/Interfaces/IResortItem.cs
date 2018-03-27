@@ -1,6 +1,6 @@
 ﻿namespace MolvenoLakeResort.Library.Interfaces
 {
-    public interface IItem:IIdentifiable
+    public interface IResortItem:IIdentifiable
     {
         string Name { get; set; }
     }

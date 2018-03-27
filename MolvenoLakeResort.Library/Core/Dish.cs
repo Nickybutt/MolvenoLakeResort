@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MolvenoLakeResort.Library.Core
 {
-    public class Dish : IItem
+    public class Dish : IResortItem
     {
         public Guid Id { get; }
         public string Name { get; set; }
