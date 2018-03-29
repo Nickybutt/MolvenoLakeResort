@@ -4,5 +4,15 @@
 }
 
 <h2>Dishes</h2>
-
-@{ Html.RenderPartial("Partial/_PartialDishes", @Model); }
+<div class="container">
+    <div class="row ">
+        <div class="col-md-4"><b>Name</b></div>
+        <div class="col-md-4">Suggested Price</div>
+        <div class="col-md-4">Price</div>
+    </div>
+@foreach (var dish in @Model)
+{
+    Html.RenderPartial("Partial/_PartialDish", dish);
+    <hr/>
+}
+    </div>
