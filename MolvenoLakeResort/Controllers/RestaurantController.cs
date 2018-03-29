@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,13 +21,13 @@ namespace MolvenoLakeResort.Controllers
 
         public ActionResult MolvenoIngredients()
         {
-            return View(Converter.ConvertCsv("D:\\Data\\ingredients.csv"));
+            return View(Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()));
         }
 
         public ActionResult Ingredients()
         {
             //fetch data
-            var molvenoIngredients = Converter.ConvertCsv("D:\\Data\\ingredients.csv");
+            var molvenoIngredients = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath());
             var model = molvenoIngredients.ToIngredients();
             //push to view
             ViewBag.ShowHeader = true;
