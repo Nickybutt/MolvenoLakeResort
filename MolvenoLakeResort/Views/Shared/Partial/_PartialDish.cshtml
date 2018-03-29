@@ -1,0 +1,23 @@
+﻿@model MolvenoLakeResort.Library.Core.Dish
+
+    @if (@Model.MinimumNumberOfPersons > 1)
+    {
+        <div class="row "><div class="col-md-12">
+            * Voor dit gerecht geld een minimum aantal personen van @Model.MinimumNumberOfPersons
+        </div></div>
+    }
+   
+    <div class="row">
+        <div class="col-md-4">
+            @Model.Name
+        </div>
+        <div class="col-md-4">
+            € @Model.SuggestedRetailPrice
+        </div>
+        <div class="col-md-4">
+            € @Model.PriceInEuros
+        </div>
+    </div>
+    <div class="row">
+        @{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients);}
+    </div>

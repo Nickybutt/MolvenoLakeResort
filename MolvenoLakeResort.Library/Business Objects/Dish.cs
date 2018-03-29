@@ -9,7 +9,8 @@ namespace MolvenoLakeResort.Library.Core
         {
         }
 
-      public double PriceInEuros { get; set; }
+        public double PriceInEuros { get; set; }
+        public double SuggestedRetailPrice { get; set; }
         public int MinimumNumberOfPersons { get; set; }
         public List<Ingredient> Ingredients { get; set; }
     }
