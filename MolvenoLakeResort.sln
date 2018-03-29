@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort", "MolvenoLakeResort\MolvenoLakeResort.csproj", "{D6DFB1E1-A2CD-4A1A-914B-926EDF27A215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort.Library", "MolvenoLakeResort.Library\MolvenoLakeResort.Library.csproj", "{5CAC21DE-B74E-414E-9802-69DB79DFC82B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MolvenoLakeResort.Library", "MolvenoLakeResort.Library\MolvenoLakeResort.Library.csproj", "{5CAC21DE-B74E-414E-9802-69DB79DFC82B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort.Data", "MolvenoLakeResort.Data\MolvenoLakeResort.Data.csproj", "{E76ACF8A-466F-4307-9871-A36EE63EAFF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5CAC21DE-B74E-414E-9802-69DB79DFC82B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CAC21DE-B74E-414E-9802-69DB79DFC82B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CAC21DE-B74E-414E-9802-69DB79DFC82B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E76ACF8A-466F-4307-9871-A36EE63EAFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76ACF8A-466F-4307-9871-A36EE63EAFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76ACF8A-466F-4307-9871-A36EE63EAFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76ACF8A-466F-4307-9871-A36EE63EAFF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

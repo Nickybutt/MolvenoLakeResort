@@ -26,5 +26,13 @@ namespace MolvenoLakeResort.Controllers
 
             return View();
         }
+
+        public ActionResult Info()
+        {
+            ViewBag.Message = "Your application info page.";
+
+            return View();
+
+        }
     }
 }
