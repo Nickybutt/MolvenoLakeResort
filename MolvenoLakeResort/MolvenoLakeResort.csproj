@@ -265,7 +265,7 @@
     <Content Include="Views\Restaurant\Dishes.cshtml" />
     <Content Include="Views\Restaurant\Meals.cshtml" />
     <Content Include="Views\Restaurant\Menu.cshtml" />
-    <Content Include="Views\Shared\Partial\PartialIngredient.cshtml" />
+    <Content Include="Views\Shared\Partial\_PartialIngredient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -282,6 +282,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MolvenoLakeResort.Library\MolvenoLakeResort.Library.csproj">
+      <Project>{5cac21de-b74e-414e-9802-69db79dfc82b}</Project>
+      <Name>MolvenoLakeResort.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -12,11 +12,5 @@ namespace MolvenoLakeResort.Library.Core.Business_Objects
         {
             Id = Guid.NewGuid();
         }
-
-        protected ResortItem(string name)
-        : this()
-        {
-            Name = name;
-        }
     }
 }

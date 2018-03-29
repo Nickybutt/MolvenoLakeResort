@@ -1,7 +1,9 @@
-﻿
+﻿@model List<MolvenoLakeResort.Library.Core.Ingredient>
 @{
     ViewBag.Title = "Ingredients";
 }
 
 <h2>Ingredients</h2>
+
+@{ Html.RenderPartial("Partial/_PartialIngredient", @Model); }
 
