@@ -27,11 +27,12 @@ namespace MolvenoLakeResort.Controllers
             return View();
         }
 
-        public ActionResult Test()
+        public ActionResult Info()
         {
-            ViewBag.Message = "Your test page.";
+            ViewBag.Message = "Your application info page.";
 
             return View();
+
         }
     }
 }
