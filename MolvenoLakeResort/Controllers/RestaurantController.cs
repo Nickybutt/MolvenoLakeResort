@@ -15,5 +15,33 @@ namespace MolvenoLakeResort.Controllers
             //push to view
             return View();
         }
+
+        public ActionResult Ingredients()
+        {
+            //fetech data
+            //push to view
+            return View();
+        }
+
+        public ActionResult Dishes()
+        {
+            //fetech data
+            //push to view
+            return View();
+        }
+
+        public ActionResult Meals()
+        {
+            //fetech data
+            //push to view
+            return View();
+        }
+
+        public ActionResult Menu()
+        {
+            //fetech data
+            //push to view
+            return View();
+        }
     }
 }
