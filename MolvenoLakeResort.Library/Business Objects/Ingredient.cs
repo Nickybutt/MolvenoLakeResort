@@ -8,10 +8,11 @@ namespace MolvenoLakeResort.Library.Core
         {
         }
 
-        public Ingredient(string name, double addOnCharge)
+        public Ingredient(string name, double addOnCharge, double costPrice, double unit, double unitPrice)
             : this(name)
         {
             AddOnCharge = addOnCharge;
+
         }
 
         public double AddOnCharge { get; set; }
