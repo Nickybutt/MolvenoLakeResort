@@ -5,7 +5,6 @@ namespace MolvenoLakeResort.Library.Core
 {
     public class Ingredient : ResortItem
     {
-
         public Ingredient() { }
 
         public double AddOnCharge { get; set; }

@@ -1,7 +1,8 @@
-﻿
+﻿@model List<MolvenoLakeResort.Library.Core.Dish>
 @{
     ViewBag.Title = "Dishes";
 }
 
 <h2>Dishes</h2>
 
+@{ Html.RenderPartial("Partial/_PartialDishes", @Model); }

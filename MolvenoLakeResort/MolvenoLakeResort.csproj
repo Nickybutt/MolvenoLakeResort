@@ -266,6 +266,7 @@
     <Content Include="Views\Restaurant\Meals.cshtml" />
     <Content Include="Views\Restaurant\Menu.cshtml" />
     <Content Include="Views\Shared\Partial\_PartialIngredient.cshtml" />
+    <Content Include="Views\Shared\Partial\_PartialDishes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
