@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MolvenoLakeResort.Library.Business_Objects;
 using MolvenoLakeResort.Library.Core.Business_Objects;
 
 namespace MolvenoLakeResort.Library.Core
@@ -13,5 +14,7 @@ namespace MolvenoLakeResort.Library.Core
         public double SuggestedRetailPrice { get; set; }
         public int MinimumNumberOfPersons { get; set; }
         public List<Ingredient> Ingredients { get; set; }
+
+       
     }
 }

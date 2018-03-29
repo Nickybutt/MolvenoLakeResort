@@ -267,6 +267,8 @@
     <Content Include="Views\Restaurant\Menu.cshtml" />
     <Content Include="Views\Shared\Partial\_PartialIngredient.cshtml" />
     <Content Include="Views\Shared\Partial\_PartialDish.cshtml" />
+    <Content Include="Views\Shared\Partial\_PartialMolvenoIngredients.cshtml" />
+    <Content Include="Views\Restaurant\MolvenoIngredients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

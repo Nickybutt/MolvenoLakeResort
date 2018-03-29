@@ -22,6 +22,6 @@ namespace MolvenoLakeResort.Library.Business_Objects
 
         public double Price { get; set; }
         public int Amount { get; set; }
-        public MeasurementTyoe MeasurementTyoe { get; set; }
+        public string MeasurementType { get; set; }
     }
 }
