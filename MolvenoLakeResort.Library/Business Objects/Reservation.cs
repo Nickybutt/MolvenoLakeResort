@@ -6,27 +6,13 @@ namespace MolvenoLakeResort.Library.Core
 {
     public class Reservation : ResortItem
     {
-        public Reservation(string name, string reservationNumber, DateTimeOffset start, int nuberOfPersons, string bookerReference, int bookerType, string bookingNumber, int floorLevel, bool active, Guid restautantId, bool showPrice) 
-            : this(name)
-        {
-            Start = start;
-            NuberOfPersons = nuberOfPersons;
-            BookerReference = bookerReference;
-            BookerType = bookerType;
-            BookingNumber = bookingNumber;
-            FloorLevel = floorLevel;
-            Active = active;
-            RestautantId = restautantId;
-            ShowPrice = showPrice;
-        }
+       
 
         public Reservation()
         {
         }
 
-        public Reservation(string name) : base(name)
-        {
-        }
+      
 
         public string ReservationNumber { get; set; }
         public DateTimeOffset Start { get; set; }

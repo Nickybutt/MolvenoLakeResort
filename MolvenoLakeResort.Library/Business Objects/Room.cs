@@ -7,21 +7,7 @@ namespace MolvenoLakeResort.Library.Core
 {
     public class Room : ResortItem
     {
-        public Room(string name, bool open, int floorLevel, DateTimeOffset openTime, DateTimeOffset opeClosedTime, List<Table> tables)
-        : this(name)
-        {
-            Open = open;
-            FloorLevel = floorLevel;
-            OpenTime = openTime;
-            OpeClosedTime = opeClosedTime;
-            Tables = tables;
-        }
-
         public Room()
-        {
-        }
-
-        public Room(string name) : base(name)
         {
         }
 

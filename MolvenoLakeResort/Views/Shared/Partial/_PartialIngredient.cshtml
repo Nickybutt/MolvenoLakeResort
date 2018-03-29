@@ -1,0 +1,19 @@
+﻿@model List<MolvenoLakeResort.Library.Core.Ingredient>
+<div class="container table-bordered table-striped">
+    <div class="row ">
+        <div class="col-md-3"><b>Name</b></div>
+        <div class="col-md-3">Cost Price</div>
+        <div class="col-md-3">Add-on Charge</div>
+        <div class="col-md-3"> </div>
+    </div>
+    @foreach (var ingredient in @Model)
+    {
+        <div class="row">
+            <div class="col-md-3">@ingredient.Name</div>
+            <div class="col-md-3">@ingredient.CostPrice</div>
+            <div class="col-md-3">@ingredient.AddOnCharge</div>
+            <div class="col-md-3"></div>
+        </div>
+
+    }
+</div>
