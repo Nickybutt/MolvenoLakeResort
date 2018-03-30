@@ -1,0 +1,22 @@
+﻿@model MolvenoLakeResort.Library.Core.Menu
+
+<div class="row">
+    <div class="col-md-4">
+        @Model.Name
+    </div>
+    <div class="col-md-4">
+        @Model.PriceInEuros
+    </div>
+</div>
+
+<div class="col-md-12 table-bordered">
+
+@foreach (var dish in @Model.Dishes)
+{
+    <div class="row">
+        @{Html.RenderPartial("Partial/_PartialDish", dish);}
+    </div>
+}
+</div>
+
+

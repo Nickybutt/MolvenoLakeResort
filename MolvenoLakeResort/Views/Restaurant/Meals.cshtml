@@ -1,7 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Meals";
+﻿@model List<MolvenoLakeResort.Library.Core.Menu>
+@{ 
+    ViewBag.Title = "Dishes";
 }
 
 <h2>Meals</h2>
+
+@foreach (var meal in @Model)
+{
+    Html.RenderPartial("Partial/_PartialMeals", meal);
+    <hr />
+}
 

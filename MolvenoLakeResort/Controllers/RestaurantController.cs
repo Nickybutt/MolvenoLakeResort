@@ -53,7 +53,6 @@ namespace MolvenoLakeResort.Controllers
                 new Dish{Ingredients = ingredients,Name = "Roti",SuggestedRetailPrice = 2.50,PriceInEuros = 3.00, MinimumNumberOfPersons = 4},
             };
 
-
             ViewBag.ShowHeader = false;
             //push to view
             return View(model);
@@ -61,9 +60,37 @@ namespace MolvenoLakeResort.Controllers
 
         public ActionResult Meals()
         {
-            //fetech data
+            //fetch data
+            var ingredients = new List<Ingredient>()
+            {
+                new Ingredient {Name = "Salt", CostPrice = 0.25},
+                new Ingredient {Name = "Pepper", CostPrice = 0.15},
+            };
+
+            var dishes = new List<Dish>()
+            {
+               new Dish{Ingredients = ingredients,Name = "Pancakes",SuggestedRetailPrice = 4.00,PriceInEuros = 5.00, MinimumNumberOfPersons = 1},
+               new Dish{Ingredients = ingredients,Name = "Stamppot",SuggestedRetailPrice = 1.00,PriceInEuros = 2.00, MinimumNumberOfPersons = 1},
+               new Dish{Ingredients = ingredients,Name = "Snert",SuggestedRetailPrice = 1.00,PriceInEuros = 2.00, MinimumNumberOfPersons = 2},
+            };
+
+            var dishesRichPeopleFood = new List<Dish>()
+            {
+                new Dish{Ingredients = ingredients,Name = "Kebab",SuggestedRetailPrice = 2.35,PriceInEuros = 3.35, MinimumNumberOfPersons = 1},
+                new Dish{Ingredients = ingredients,Name = "Kapsalon",SuggestedRetailPrice = 6.00,PriceInEuros = 9.00, MinimumNumberOfPersons = 1},
+                new Dish{Ingredients = ingredients,Name = "Roti",SuggestedRetailPrice = 2.50,PriceInEuros = 3.00, MinimumNumberOfPersons = 4},
+            };
+
+            var model = new List<Menu>()
+            {
+                new Menu { Dishes = dishes, PriceInEuros = 12.35, Name = "Pancake fiesta"},
+                new Menu { Dishes = dishesRichPeopleFood, PriceInEuros = 299.95, Name = "Rich people food" }
+            };
+
+            ViewBag.ShowHeader = false;
+
             //push to view
-            return View();
+            return View(model);
         }
 
         public ActionResult Menu()
