@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MolvenoLakeResort.Library.Core;
+using MolvenoLakeResort.Library.Helpers;
 
 namespace MolvenoLakeResort.Controllers
 {
@@ -14,21 +16,19 @@ namespace MolvenoLakeResort.Controllers
         {
             //fetech data
             //push to view
-            return View();
+             return View();
+        }
+
+        public ActionResult MolvenoIngredients()
+        {
+            return View(Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()));
         }
 
         public ActionResult Ingredients()
         {
             //fetch data
-            var model = new List<Ingredient>
-            {
-                new Ingredient {Name = "Salt", CostPrice = 0.25},
-                new Ingredient {Name = "Pepper", CostPrice = 0.15},
-                new Ingredient {Name = "Kurma", CostPrice = 0.35},
-                new Ingredient {Name = "Saffron", CostPrice = 3.25},
-                new Ingredient {Name = "Cumin", CostPrice = 1.25},
-                new Ingredient {Name = "Cinnamon", CostPrice = 2.25}
-            };
+            var molvenoIngredients = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath());
+            var model = molvenoIngredients.ToIngredients();
             //push to view
             ViewBag.ShowHeader = true;
             return View(model);
