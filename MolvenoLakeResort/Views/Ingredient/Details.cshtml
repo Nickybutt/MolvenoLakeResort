@@ -1,0 +1,115 @@
+﻿@model MolvenoLakeResort.Library.Core.Ingredient
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm("Edit", "Ingredient", new { id = Model.Id }))
+{
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Name)
+        </td>
+        <td>
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.Name)
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Name)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.AddOnCharge)
+        </td>
+        <td>
+
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.AddOnCharge.ToString())
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.AddOnCharge)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.CostPrice)
+        </td>
+        <td>
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.CostPrice.ToString())
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.CostPrice)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Unit.Price)
+        </td>
+        <td>
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.Unit.Price.ToString())
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Unit.Price)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Unit.MeasurementType)
+        </td>
+        <td>
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.Unit.MeasurementType)
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Unit.MeasurementType)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Unit.Amount)
+        </td>
+        <td>
+            @if (ViewBag.ReadOnly)
+            {
+                @Html.Label(Model.Unit.Amount.ToString())
+
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.Unit.Amount)
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" class="btn-danger" />
+            <input type="submit" class="btn-danger" />
+       </td>
+    </tr>
+</table>
+}
