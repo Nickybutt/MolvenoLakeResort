@@ -9,6 +9,23 @@
     padding-right: 15px;
 }
 
+.jumbotron {
+    /* Background settings */
+    background-image: url("/Content/Images/background_image.jpg");
+    background-size: cover;
+    background-position: 100% 40%;
+    opacity: 0.9;
+
+    /* Font */
+    color: white;
+
+    min-height: 300px;
+}
+
+.molveno_logo {
+    width: 100%;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

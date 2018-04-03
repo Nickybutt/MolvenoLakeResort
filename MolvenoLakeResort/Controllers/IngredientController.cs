@@ -25,8 +25,7 @@ namespace MolvenoLakeResort.Controllers
 {
     public class IngredientController : Controller
     {
-        private static readonly List<Ingredient> ingredients =
-            Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToIngredients();
+        private static readonly List<Ingredient> ingredients = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToIngredients();
 
         private static Guid currentId;
         

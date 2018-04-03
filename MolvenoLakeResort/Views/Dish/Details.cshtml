@@ -12,7 +12,7 @@
     <div class="col-md-4">
         @if (ViewBag.ReadOnly)
         {
-            @Model.Name
+            @Html.Label(Model.Name)
         }
         else
         {
@@ -25,7 +25,7 @@
     <div class="col-md-4">
         @if (ViewBag.ReadOnly)
         {
-                @Html.Label(Model.PriceInEuros.ToString("C"))
+            @Html.Label(Model.PriceInEuros.ToString("C"))
         }
         else
         {
@@ -37,18 +37,27 @@
     <div class="col-md-4">@Html.LabelFor(m => m.SuggestedRetailPrice)</div>
     <div class="col-md-4">
         @if (ViewBag.ReadOnly)
-    {
-        @Html.Label(Model.SuggestedRetailPrice.ToString("C"))
-}
-else
-{
-    @Html.TextBoxFor(m => m.PriceInEuros)
-}
+        {
+            @Html.Label(Model.SuggestedRetailPrice.ToString("C"))
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.PriceInEuros)
+        }
     </div>
 </div>
 <div class="row">
     <div class="col-md-4">@Html.LabelFor(m => m.MinimumNumberOfPersons)</div>
-    <div class="col-md-4">@Model.MinimumNumberOfPersons</div>
+    <div class="col-md-4">
+        @if (ViewBag.ReadOnly)
+        {
+            @Html.Label(Model.MinimumNumberOfPersons.ToString())
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.MinimumNumberOfPersons)
+        }
+    </div>
 </div>
 
 <hr />
