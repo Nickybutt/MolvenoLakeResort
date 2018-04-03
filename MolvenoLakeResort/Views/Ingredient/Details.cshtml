@@ -1,4 +1,5 @@
-﻿@model MolvenoLakeResort.Library.Core.Ingredient
+﻿@using System.Globalization
+@model MolvenoLakeResort.Library.Core.Ingredient
 @{
     ViewBag.Title = "Details";
 }
@@ -17,19 +18,19 @@
         <tr>
             <td style="width:50%">@Html.LabelFor(m => m.AddOnCharge)</td>
             <td>
-                @(ViewBag.ReadOnly ? Html.Label(@Model.AddOnCharge.ToString("C0")) : Html.TextBoxFor(m => m.AddOnCharge))
+                @(ViewBag.ReadOnly ? Html.Label(@Model.AddOnCharge.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))) : Html.TextBoxFor(m => m.AddOnCharge))
             </td>
         </tr>
         <tr>
             <td style="width:50%">@Html.LabelFor(m => m.CostPrice)</td>
             <td>
-                @(ViewBag.ReadOnly ? Html.Label(@Model.CostPrice.ToString("C0")) : Html.EditorFor(m => m.CostPrice))
+                @(ViewBag.ReadOnly ? Html.Label(@Model.CostPrice.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))) : Html.EditorFor(m => m.CostPrice))
             </td>
         </tr>
         <tr>
             <td style="width:50%">@Html.LabelFor(m => m.Unit.Price)</td>
             <td>
-                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Price.ToString("C0")) : Html.TextBoxFor(m => m.Unit.Price))
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Price.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))) : Html.TextBoxFor(m => m.Unit.Price))
             </td>
         </tr>
         <tr>
@@ -49,18 +50,18 @@
             {
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
-                </td>
-                <td>
-                    @Html.ActionLink("New Ingredient", "Create", new { }, new { @class = "btn btn-dark" })
+                    &nbsp;
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-dark" })
+                    &nbsp;
+                    @Html.ActionLink("New", "Create", new { }, new { @class = "btn btn-dark" })
                 </td>
             }
             else
             {
                 <td>
                     <input type="submit" class="btn btn-dark" title="Save" value="Save"></input>
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-dark" })
+                &nbsp;
+                @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-dark" })
 
 
                 </td>
