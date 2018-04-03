@@ -14,7 +14,7 @@
         if (ViewBag.ShowHeader)
         {
             <div class="row">
-                <div class="col-md-3">@Html.ActionLink(ingredient.Name, "Details", new { id = ingredient.Id })</div>
+                <div class="col-md-3">@Html.ActionLink(ingredient.Name, "Details", new {id = ingredient.Id},new{@class="btn btn-link"}) </div>
                 <div class="col-md-3">@ingredient.CostPrice</div>
                 <div class="col-md-3">@ingredient.AddOnCharge</div>
                 <div class="col-md-3"></div>
