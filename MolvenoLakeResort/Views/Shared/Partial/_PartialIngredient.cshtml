@@ -1,33 +1,53 @@
-﻿@model List<MolvenoLakeResort.Library.Core.Ingredient>
+﻿@using X.PagedList
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Bootstrap4
+@using X.PagedList.Mvc.Common
+@model X.PagedList.IPagedList<MolvenoLakeResort.Library.Core.Ingredient>
 <div class="container">
     @if (ViewBag.ShowHeader)
     {
         <div class="row ">
             <div class="col-md-3"><b>Name</b></div>
-            <div class="col-md-3">Cost Price</div>
-            <div class="col-md-3">Add-on Charge</div>
-            <div class="col-md-3"> </div>
+            <div class="col-md-3"><b>Cost Price</b></div>
+            <div class="col-md-3"><b>Add-on Charge</b></div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row">
+            <hr class="h-50"/>
         </div>
     }
-    @foreach (var ingredient in @Model)
+    @foreach (var ingredient in @Model.ToList())
     {
         if (ViewBag.ShowHeader)
         {
             <div class="row">
-                <div class="col-md-3">@Html.ActionLink(ingredient.Name, "Details", new {id = ingredient.Id},new{@class="btn btn-link"}) </div>
-                <div class="col-md-3">@ingredient.CostPrice</div>
-                <div class="col-md-3">@ingredient.AddOnCharge</div>
-                <div class="col-md-3"></div>
+                <div class="col-lg-3">@Html.ActionLink(ingredient.Name,"Details","Ingredient",new{id= ingredient.Id}, new {@class="card-link"})</div>
+                <div class="col-lg-3">@ingredient.CostPrice</div>
+                <div class="col-lg-3">@ingredient.AddOnCharge</div>
+                <div class="col-lg-3">@Html.ActionLink("edit", "Edit", "Ingredient", new { ingredient.Id }, new { @class = "card-link" })</div>
             </div>
         }
         else
         {
             <div class="row">
-                <div class="col-md-3"><i>@ingredient.Name</i></div>
-                <div class="col-md-3"><i>@ingredient.CostPrice</i></div>
-                <div class="col-md-3"><i>@ingredient.AddOnCharge</i></div>
-                <div class="col-md-3"></div>
+                <div class="col-md-2"><i>@ingredient.Name, </i></div>
             </div>
         }
     }
+    @if (ViewBag.ShowHeader)
+    {
+        <div class="row">
+            <hr class="h-50"/>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                @Html.PagedListPager((IPagedList) @Model, page => Url.Action("Index", "Ingredient", new {page}), Bootstrap4PagedListRenderOptions.PageNumbersOnly)
+            </div>
+            <div class="col-md-4">
+                @Html.ActionLink("New Ingredient", "Create", "Ingredient", new {}, new {@class = "btn btn-dark"})
+            </div>
+        </div>
+    }
 </div>
+

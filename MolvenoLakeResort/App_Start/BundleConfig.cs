@@ -24,7 +24,9 @@ namespace MolvenoLakeResort
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-grid.min.css",
+                      "~/Content/bootstrap-reboot.min.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
         }
     }

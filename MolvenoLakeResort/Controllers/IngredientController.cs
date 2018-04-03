@@ -17,6 +17,7 @@ using System.Linq;
 using System.Web.Mvc;
 using MolvenoLakeResort.Library.Core;
 using MolvenoLakeResort.Library.Helpers;
+using X.PagedList;
 
 #endregion
 
@@ -31,10 +32,12 @@ namespace MolvenoLakeResort.Controllers
         
         // GET: Ingredient
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             ViewBag.ShowHeader = true;
-            return View(ingredients.Where(i => i.Deleted == false).ToList());
+            var pageNumber = page ?? 1;
+            var model = ingredients.Where(i => i.Deleted == false).ToPagedList(pageNumber, 10);
+            return View(model);
         }
 
         // GET: Ingredient/Details/id
