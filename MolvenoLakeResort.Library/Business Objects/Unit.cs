@@ -10,6 +10,7 @@
 
 #region ...   [Usings]   ...
 
+using System.ComponentModel;
 using MolvenoLakeResort.Library.Core.Enumerations;
 
 #endregion
@@ -20,8 +21,11 @@ namespace MolvenoLakeResort.Library.Business_Objects
     {
         public Unit() { }
 
+        [DisplayName("Price")]
         public double Price { get; set; }
+        [DisplayName("Amount")]
         public int Amount { get; set; }
+        [DisplayName("Measurement")]
         public string MeasurementType { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace MolvenoLakeResort.Library.Helpers
                 Name = molvenoIngredient.Description,
                 CostPrice = molvenoIngredient.PricePerUnit,
                 AddOnCharge = 0.25,
+                Deleted = false,
                 Unit = new Unit
                 {
                     Price = molvenoIngredient.PricePerUnit,

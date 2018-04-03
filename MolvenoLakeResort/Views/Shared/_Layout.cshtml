@@ -24,18 +24,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { @class= "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Info", "Info", "Home", new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class= "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Info", "Info", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item dropdown">
                         <a href="#" class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown">Restaurants<b class="caret"></b></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li>@Html.ActionLink("Ingredients", "Ingredients", "Restaurant", new { @class = "dropdown-item" })</li>
-                            <li>@Html.ActionLink("Imported Ingredients", "MolvenoIngredients", "Restaurant", new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Ingredients", "Index", "Ingredient", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Imported Ingredients", "MolvenoIngredients", "Restaurant", new { area = "" }, new { @class = "dropdown-item" })</li>
                             <li class="dropdown-item" >@Html.ActionLink("Dishes", "Dishes", "Restaurant")</li>
-                            <li>@Html.ActionLink("Meals", "Meals", "Restaurant", new { @class = "dropdown-item" })</li>
-                            <li>@Html.ActionLink("Menu", "Menu", "Restaurant", new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Meals", "Meals", "Restaurant", new { area = "" }, new { @class = "dropdown-item" })</li>
+                            <li>@Html.ActionLink("Menu", "Menu", "Restaurant", new { area = "" }, new { @class = "dropdown-item" })</li>
                         </ul>
                     </li>
                 </ul>

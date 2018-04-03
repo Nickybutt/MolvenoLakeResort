@@ -1,0 +1,70 @@
+﻿@model MolvenoLakeResort.Library.Core.Ingredient
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm("Edit", "Ingredient", new { id = Model.Id }))
+{
+    <table>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Name)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Name) : Html.TextBoxFor(m => m.Name))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.AddOnCharge)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.AddOnCharge.ToString("C0")) : Html.TextBoxFor(m => m.AddOnCharge))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.CostPrice)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.CostPrice.ToString("C0")) : Html.EditorFor(m => m.CostPrice))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Unit.Price)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Price.ToString("C0")) : Html.TextBoxFor(m => m.Unit.Price))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Unit.Amount)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Amount.ToString()) : Html.TextBoxFor(m => m.Unit.Amount))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Unit.MeasurementType)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.MeasurementType.ToString()) : Html.TextBoxFor(m => m.Unit.MeasurementType))
+            </td>
+        </tr>
+        <tr>
+            @if (ViewBag.ReadOnly)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
+                </td>
+                <td>
+                    @Html.ActionLink("New Ingredient", "Create", new { }, new { @class = "btn btn-dark" })
+                </td>
+            }
+            else
+            {
+                <td>
+                    <input type="submit" class="btn btn-dark" title="Save" value="Save"></input>
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-dark" })
+
+
+                </td>
+            }
+        </tr>
+    </table>
+}

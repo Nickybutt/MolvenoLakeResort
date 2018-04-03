@@ -36,6 +36,7 @@ namespace MolvenoLakeResort.Controllers
 
         public ActionResult Dishes()
         {
+                
             var ingredients = new List<Ingredient>()
             {
                 new Ingredient {Name = "Salt", CostPrice = 0.25},
