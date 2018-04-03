@@ -23,6 +23,10 @@ ViewBag.ShowHeader=false;
             € @Model.PriceInEuros
         </div>
     </div>
-    <div class="row">
-       @{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients.ToPagedList());}
-    </div>
+<div class="row">
+    @foreach (var i in @Model.Ingredients)
+    {
+    <i><div class="col-md-1">@i.Name </div></i>
+    }
+    @*@{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients.ToPagedList());}*@
+</div>

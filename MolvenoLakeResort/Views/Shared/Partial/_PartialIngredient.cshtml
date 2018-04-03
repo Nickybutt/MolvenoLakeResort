@@ -1,4 +1,5 @@
-﻿@using X.PagedList
+﻿@using System.Globalization
+@using X.PagedList
 @using X.PagedList.Mvc
 @using X.PagedList.Mvc.Bootstrap4
 @using X.PagedList.Mvc.Common
@@ -23,8 +24,8 @@
         {
             <div class="row">
                 <div class="col-lg-3">@Html.ActionLink(ingredient.Name,"Details","Ingredient",new{id= ingredient.Id}, new {@class="card-link"})</div>
-                <div class="col-lg-3">@ingredient.CostPrice</div>
-                <div class="col-lg-3">@ingredient.AddOnCharge</div>
+                <div class="col-lg-3">@ingredient.CostPrice.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))</div>
+                <div class="col-lg-3">@ingredient.AddOnCharge.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))</div>
                 <div class="col-lg-3">@Html.ActionLink("edit", "Edit", "Ingredient", new { ingredient.Id }, new { @class = "card-link" })</div>
             </div>
         }
