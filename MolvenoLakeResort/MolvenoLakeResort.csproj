@@ -192,6 +192,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -299,7 +300,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Restaurant\Index.cshtml" />
-    <Content Include="Views\Restaurant\Dishes.cshtml" />
+    <Content Include="Views\Dish\Index.cshtml" />
     <Content Include="Views\Restaurant\Meals.cshtml" />
     <Content Include="Views\Restaurant\Menu.cshtml" />
     <Content Include="Views\Shared\Partial\_PartialIngredient.cshtml" />
@@ -317,6 +318,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Ingredient\Index.cshtml" />
     <Content Include="Views\Ingredient\Details.cshtml" />
+    <Content Include="Views\Dish\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
