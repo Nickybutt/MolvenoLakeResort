@@ -1,5 +1,12 @@
-﻿@model List<MolvenoLakeResort.Library.Business_Objects.MolvenoIngredient>
+﻿@using System.Globalization
+@using X.PagedList
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Bootstrap4
+@using X.PagedList.Mvc.Common
+@model X.PagedList.IPagedList<MolvenoLakeResort.Library.Business_Objects.MolvenoIngredient>
 <div class="container">
+    @if (ViewBag.ShowHeader)
+    {
         <div class="row ">
             <div class="col-md-1">Description</div>
             <div class="col-md-1">Brand</div>
@@ -14,8 +21,11 @@
             <div class="col-md-1">Unit</div>
             <div class="col-md-1">Vat</div>
         </div>
+    }
     @foreach (var ingredient in @Model)
     {
+        if (ViewBag.ShowHeader)
+        {
             <div class="row">
                 <div class="col-md-1">@ingredient.Description</div>
                 <div class="col-md-1">@ingredient.Brand</div>
@@ -30,5 +40,6 @@
                 <div class="col-md-1">@ingredient.Unit</div>
                 <div class="col-md-1">@ingredient.Vat</div>
             </div>
+        }
     }
 </div>
