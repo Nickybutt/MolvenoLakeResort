@@ -1,33 +1,53 @@
-﻿using System;
+﻿#region ...   [Header]   ...
+
+// Solution      ::    MolvenoLakeResort
+// Filename      ::    MolvenoLakeResort.Library.DataHelper.cs
+// Created On    ::    03/04/2018 2:15 PM
+// Altered On    ::    04/04/2018 8:59 AM
+// By            ::    Arjan Crielaard
+
+#endregion
+
+#region ...   [Usings]   ...
+
+using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using MolvenoLakeResort.Library.Business_Objects;
 using MolvenoLakeResort.Library.Core;
 
+#endregion
+
 namespace MolvenoLakeResort.Library.Helpers
 {
-    public static class Converter
+    public static class DataHelper
     {
         private static List<Dish> dishes;
+        private static List<Ingredient> ingredients;
         private static readonly Random random = new Random();
+        private static readonly string[] peopleNames = { "Erasmo", "Wendell", "Phillip", "Tonia", "Ocie", "Tara", "Emmaline", "Aurelia", "Arthur", "Brande", "Dreama", "Manuel", "Angelica", "Zack", "Kristy", "Marcelene", "Yun", "Cory", "Verlie", "Josphine", "Danuta", "Ina", "Reggie", "Alden", "Guillermina", "Haley", "Marti", "Mickey", "Sal", "Linsey", "Jarod", "Tamra", "Hester", "Royal", "Kenny", "Josefine", "Lucile", "Kayleigh", "Dianne", "Belle", "Ofelia", "Jannet", "Adell", "Roselle", "Kaitlin", "Gennie", "Denese", "Harlan", "Yael", "Jong" };
 
+        public static string GetRandomPersonName()
+        {
+            return peopleNames[random.Next(0, peopleNames.Length)];
+        }
+
+        public static List<Ingredient> Ingredients(string path)
+        {
+            return ingredients ?? (ingredients = ConvertCsv(path).ToIngredients());
+        }
         public static List<Dish> ToDishes(this List<MolvenoIngredient> molvenoIngredients)
         {
             if (dishes == null)
             {
-               
                 var ingredients = new List<Ingredient>();
                 var ingredientUpper = random.Next(1, 6);
 
-                for (int i = 0; i < ingredientUpper; i++)
-                {
-                    ingredients.Add(molvenoIngredients[random.Next(0,molvenoIngredients.Count)].ToIngredient());
-                }
+                for (var i = 0; i < ingredientUpper; i++)
+                    ingredients.Add(molvenoIngredients[random.Next(0, molvenoIngredients.Count)].ToIngredient());
                 //fetch data
-                dishes = new List<Dish>()
+                dishes = new List<Dish>
                 {
                     new Dish
                     {
@@ -84,12 +104,11 @@ namespace MolvenoLakeResort.Library.Helpers
                         SuggestedRetailPrice = 2.50m,
                         PriceInEuros = 3.00m,
                         MinimumNumberOfPersons = 4
-                    },
+                    }
                 };
             }
 
             return dishes;
-
         }
 
         public static List<Ingredient> ToIngredients(this List<MolvenoIngredient> molvenoIngredients)
@@ -101,6 +120,7 @@ namespace MolvenoLakeResort.Library.Helpers
         {
             return $"€ {value:N2}";
         }
+
         private static Ingredient ToIngredient(this MolvenoIngredient molvenoIngredient)
         {
             return new Ingredient
@@ -153,14 +173,10 @@ namespace MolvenoLakeResort.Library.Helpers
             {
                 using (var reader = new StreamReader(fileStream))
                 {
-                    string line = reader.ReadLine();
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        yield return line;
-                    }
+                    var line = reader.ReadLine();
+                    while ((line = reader.ReadLine()) != null) yield return line;
                 }
             }
         }
-
     }
 }

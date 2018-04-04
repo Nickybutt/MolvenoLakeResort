@@ -15,6 +15,11 @@ body {
     font-family: 'Lobster', cursive;
 }
 
+.footer {
+    bottom: 5px;
+    position: absolute;
+}
+
 .jumbotron {
     /* Background settings */
     background-image: url("/Content/Images/background_image.jpg");

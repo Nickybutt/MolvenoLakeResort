@@ -25,7 +25,7 @@ namespace MolvenoLakeResort.Controllers
     public class DishController : Controller
     {
         private static readonly List<MolvenoIngredient> molvenoIngredients =
-            Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath());
+            DataHelper.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath());
 
 
         // GET: Dish
@@ -68,13 +68,13 @@ namespace MolvenoLakeResort.Controllers
             }
         }
 
-        // GET: Dish/Edit/5
+        // GET: Dish/Save/5
         public ActionResult Edit(int id)
         {
             return View("Details");
         }
 
-        // POST: Dish/Edit/5
+        // POST: Dish/Save/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {

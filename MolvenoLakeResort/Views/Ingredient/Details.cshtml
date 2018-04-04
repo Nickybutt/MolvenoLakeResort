@@ -6,7 +6,7 @@
 
 <h2>Details</h2>
 
-@using (Html.BeginForm("Edit", "Ingredient", new { id = Model.Id }))
+@using (Html.BeginForm("Save", "Ingredient", new { id = Model.Id }))
 {
     <table>
         <tr>
@@ -62,8 +62,6 @@
                     <input type="submit" class="btn btn-dark" title="Save" value="Save"></input>
                 &nbsp;
                 @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-dark" })
-
-
                 </td>
             }
         </tr>

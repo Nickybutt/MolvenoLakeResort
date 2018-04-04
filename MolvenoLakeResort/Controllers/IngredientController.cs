@@ -24,9 +24,7 @@ using X.PagedList;
 namespace MolvenoLakeResort.Controllers
 {
     public class IngredientController : Controller
-    {
-        private static readonly List<Ingredient> ingredients = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToIngredients();
-
+    {  
         private static Guid currentId;
 
         // GET: Ingredient
@@ -35,26 +33,26 @@ namespace MolvenoLakeResort.Controllers
         {
             ViewBag.ShowHeader = true;
             var pageNumber = page ?? 1;
-            var model = ingredients.Where(i => i.Deleted == false).ToPagedList(pageNumber, 10);
+            var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Where(i => i.Deleted == false).ToPagedList(pageNumber, 10);
             return View(model);
         }
-
-
+        
+        // GET: MolvenoIngredient
+        [HttpGet]
         public ActionResult CoreIndex(int? page)
         {
             var pageNumber = page ?? 1;
-            var model = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToPagedList(pageNumber, 10);
+            var model = DataHelper.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToPagedList(pageNumber, 10);
 
             return View(model);
         }
-
-
+        
         // GET: Ingredient/Details/id
         [HttpGet]
         public ActionResult Details(Guid id)
         {
             ViewBag.ReadOnly = true;
-            var model = ingredients.FirstOrDefault(i => i.Id == id);
+            var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
             return View(model);
         }
 
@@ -66,27 +64,26 @@ namespace MolvenoLakeResort.Controllers
             return View("Details", new Ingredient());
         }
 
-        // GET: Ingredient/Edit/5
+        // GET: Ingredient/Save/5
         [HttpGet]
         public ActionResult Edit(Guid id)
         {
             ViewBag.ReadOnly = false;
-            var model = ingredients.FirstOrDefault(i => i.Id == id);
+            var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
             return View("Details", model);
         }
 
-        // POST: Ingredient/Edit/5
+        // POST: Ingredient/Save/5
         [HttpPost]
-        public ActionResult Edit(Guid id, Ingredient newIngredient)
+        public ActionResult Save(Guid id, Ingredient newIngredient)
         {
             try
             {
-
-                var oldIngredient = ingredients.FirstOrDefault(i => i.Id == id);
+                var oldIngredient = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
                 if (oldIngredient != default(Ingredient))
-                    ingredients.Remove(oldIngredient);
+                    DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Remove(oldIngredient);
 
-                ingredients.Add(newIngredient);
+                DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Add(newIngredient);
                 ViewBag.ReadOnly = true;
                 return View("Details", newIngredient);
             }
@@ -100,7 +97,7 @@ namespace MolvenoLakeResort.Controllers
         [HttpGet]
         public ActionResult Delete(Guid id)
         {
-            var oldIngredient = ingredients.FirstOrDefault(i => i.Id == id);
+            var oldIngredient = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
             oldIngredient.Deleted = true;
             ViewBag.ShowHeader = true;
             return View("Index");
