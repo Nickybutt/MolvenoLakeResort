@@ -22,7 +22,7 @@ namespace MolvenoLakeResort.Library.Business_Objects
         public Unit() { }
 
         [DisplayName("Price")]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         [DisplayName("Amount")]
         public int Amount { get; set; }
         [DisplayName("Measurement")]

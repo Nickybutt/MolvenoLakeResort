@@ -9,9 +9,9 @@ namespace MolvenoLakeResort.Library.Core
         public Ingredient() { }
 
         [DisplayName("Add on Charge")]
-        public double AddOnCharge { get; set; }
+        public decimal AddOnCharge { get; set; }
         public Unit Unit { get; set; }
         [DisplayName("Cost")]
-        public double CostPrice { get; set; }
+        public decimal CostPrice { get; set; }
     }
 }

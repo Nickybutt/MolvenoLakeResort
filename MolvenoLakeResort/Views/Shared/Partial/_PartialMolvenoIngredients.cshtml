@@ -1,34 +1,46 @@
-﻿@model List<MolvenoLakeResort.Library.Business_Objects.MolvenoIngredient>
+﻿@using MolvenoLakeResort.Library.Helpers
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Bootstrap4
+@model X.PagedList.IPagedList<MolvenoLakeResort.Library.Business_Objects.MolvenoIngredient>
 <div class="container">
-        <div class="row ">
-            <div class="col-md-1">Description</div>
-            <div class="col-md-1">Brand</div>
-            <div class="col-md-1">ArticleNumber</div>
-            <div class="col-md-1">Category</div>
-            <div class="col-md-1">Deliverer</div>
-            <div class="col-md-1">Price</div>
-            <div class="col-md-1">PricePerUnit</div>
-            <div class="col-md-1">Quantity</div>
-            <div class="col-md-1">Stock</div>
-            <div class="col-md-1">StockWorth</div>
-            <div class="col-md-1">Unit</div>
-            <div class="col-md-1">Vat</div>
-        </div>
-    @foreach (var ingredient in @Model)
+    <div class="row font-weight-bold ">
+        <div class="col-md-1">@Html.LabelFor(m => m.First().ArticleNumber)</div>
+        <div class="col-md-2">@Html.LabelFor(m => m.First().Description)</div>
+        <div class="col-md-2">@Html.LabelFor(m => m.First().Brand)</div>
+        @*<div class="col-md-1">@Html.LabelFor(m => m.First().Category)</div>
+        <div class="col-md-1">Deliverer</div>*@
+        <div class="col-md-1">@Html.LabelFor(m => m.First().Unit)</div>
+        <div class="col-md-1">@Html.LabelFor(m => m.First().PricePerUnit)</div>
+        <div class="col-md-2">@Html.LabelFor(m => m.First().Price)</div>
+        <div class="col-md-1">@Html.LabelFor(m => m.First().Quantity)</div>
+        <div class="col-md-1">@Html.LabelFor(m => m.First().Stock)</div>
+        <div class="col-md-1">@Html.LabelFor(m => m.First().StockWorth)</div>
+        @*<div class="col-md-1">@Html.LabelFor(m => m.First().Vat)</div>*@
+    </div>
+    @foreach (var ingredient in Model)
     {
-            <div class="row">
-                <div class="col-md-1">@ingredient.Description</div>
-                <div class="col-md-1">@ingredient.Brand</div>
-                <div class="col-md-1">@ingredient.ArticleNumber</div>
-                <div class="col-md-1">@ingredient.Category</div>
-                <div class="col-md-1">@ingredient.Deliverer</div>
-                <div class="col-md-1">@ingredient.Price</div>
-                <div class="col-md-1">@ingredient.PricePerUnit</div>
-                <div class="col-md-1">@ingredient.Quantity</div>
-                <div class="col-md-1">@ingredient.Stock</div>
-                <div class="col-md-1">@ingredient.StockWorth</div>
-                <div class="col-md-1">@ingredient.Unit</div>
-                <div class="col-md-1">@ingredient.Vat</div>
-            </div>
+        <div class="row">
+            <div class="col-md-1">@ingredient.ArticleNumber</div>
+            <div class="col-md-2">@ingredient.Description</div>
+            <div class="col-md-2">@ingredient.Brand</div>
+            @*<div class="col-md-1">@ingredient.Category</div>
+        <div class="col-md-1">@ingredient.Deliverer</div>*@
+            <div class="col-md-1">@ingredient.Unit</div>
+            <div class="col-md-1">@ingredient.PricePerUnit.ToCurrency()</div>
+            <div class="col-md-2">@ingredient.Price.ToCurrency()</div>
+            <div class="col-md-1">@ingredient.Quantity</div>
+            <div class="col-md-1">@ingredient.Stock</div>
+            <div class="col-md-1">@ingredient.StockWorth</div>
+            @* <div class="col-md-1">@ingredient.Vat</div>*@
+        </div>
     }
+    <div class="row">
+        <hr class="h-50"/>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            @Html.PagedListPager(Model, page => Url.Action("CoreIndex", "Ingredient", new {page}), Bootstrap4PagedListRenderOptions.PageNumbersOnly)
+        </div>
+
+    </div>
 </div>

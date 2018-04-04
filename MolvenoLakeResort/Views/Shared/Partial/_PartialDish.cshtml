@@ -1,4 +1,5 @@
-﻿@model MolvenoLakeResort.Library.Core.Dish
+﻿@using MolvenoLakeResort.Library.Helpers
+@model MolvenoLakeResort.Library.Core.Dish
 
     @if (@Model.MinimumNumberOfPersons > 1)
     {
@@ -12,10 +13,10 @@
                 @Html.ActionLink(Model.Name,"Details", new { Id = Model.Id })
             </div>
             <div class="col-md-4">
-                € @Model.SuggestedRetailPrice
+                @Model.SuggestedRetailPrice.ToCurrency()
             </div>
             <div class="col-md-4">
-                € @Model.PriceInEuros
+                @Model.PriceInEuros.ToCurrency()
             </div>
         </div>
     <div class="row">
