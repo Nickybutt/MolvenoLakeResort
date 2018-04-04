@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using MolvenoLakeResort.Library.Helpers
+@using X.PagedList
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Bootstrap4
+@model X.PagedList.IPagedList<MolvenoLakeResort.Library.Core.Reservation>
+
+<h2>Index</h2>
+
+<div class="row ">
+    <div class="col-md-3"><b>@Html.LabelFor(m=>m.FirstOrDefault().ReservationNumber)</b></div>
+    <div class="col-md-3"><b>@Html.LabelFor(m => m.FirstOrDefault().Name)</b></div>
+    <div class="col-md-2"><b>@Html.LabelFor(m => m.FirstOrDefault().Start)</b></div>
+    <div class="col-md-2"><b>@Html.LabelFor(m => m.FirstOrDefault().NuberOfPersons)</b></div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row">
+    <hr class="h-50"/>
+</div>
+
+@foreach (var reservation in Model)
+{
+    <div class="row ">
+        <div class="col-md-3">@Html.ActionLink(reservation.ReservationNumber, "Details", "Reservation", new { id = reservation.Id }, new { @class = "card-link" })</div>
+        <div class="col-md-3">@Html.Label(reservation.Name)</div>
+        <div class="col-md-2">@Html.Label(reservation.Start.ToDateTime())</div>
+        <div class="col-md-2">@Html.Label(reservation.NuberOfPersons.ToString())</div>
+        <div class="col-lg-2">@Html.ActionLink("edit", "Edit", "Reservation", new { reservation.Id }, new { @class = "card-link" })</div>
+    </div>
+}
+<div class="row">
+    <hr class="h-50"/>
+</div>
+<div class="row">
+    <div class="col-8">
+        @Html.PagedListPager((IPagedList) @Model, page => Url.Action("Index", "Reservation", new {page}), Bootstrap4PagedListRenderOptions.PageNumbersOnly)
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("New Reservation", "Create", "Reservation", new {}, new {@class = "btn btn-dark"})
+    </div>
+</div>

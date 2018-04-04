@@ -24,7 +24,7 @@ using X.PagedList;
 namespace MolvenoLakeResort.Controllers
 {
     public class IngredientController : Controller
-    {  
+    {
         private static Guid currentId;
 
         // GET: Ingredient
@@ -36,7 +36,7 @@ namespace MolvenoLakeResort.Controllers
             var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Where(i => i.Deleted == false).ToPagedList(pageNumber, 10);
             return View(model);
         }
-        
+
         // GET: MolvenoIngredient
         [HttpGet]
         public ActionResult CoreIndex(int? page)
@@ -46,7 +46,7 @@ namespace MolvenoLakeResort.Controllers
 
             return View(model);
         }
-        
+
         // GET: Ingredient/Details/id
         [HttpGet]
         public ActionResult Details(Guid id)
@@ -100,7 +100,8 @@ namespace MolvenoLakeResort.Controllers
             var oldIngredient = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
             oldIngredient.Deleted = true;
             ViewBag.ShowHeader = true;
-            return View("Index");
+            var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Where(i => i.Deleted == false).ToPagedList(1, 10);
+            return View("Index", model);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@using MolvenoLakeResort.Library.Helpers
 @model MolvenoLakeResort.Library.Core.Ingredient
 @{
     ViewBag.Title = "Details";
@@ -24,13 +25,13 @@
         <tr>
             <td style="width:50%">@Html.LabelFor(m => m.CostPrice)</td>
             <td>
-                @(ViewBag.ReadOnly ? Html.Label(@Model.CostPrice.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))) : Html.EditorFor(m => m.CostPrice))
+                @(ViewBag.ReadOnly ? Html.Label(@Model.CostPrice.ToCurrency()) : Html.EditorFor(m => m.CostPrice))
             </td>
         </tr>
         <tr>
             <td style="width:50%">@Html.LabelFor(m => m.Unit.Price)</td>
             <td>
-                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Price.ToString("C0", CultureInfo.GetCultureInfo("nl-NL"))) : Html.TextBoxFor(m => m.Unit.Price))
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Unit.Price.ToCurrency()) : Html.TextBoxFor(m => m.Unit.Price))
             </td>
         </tr>
         <tr>

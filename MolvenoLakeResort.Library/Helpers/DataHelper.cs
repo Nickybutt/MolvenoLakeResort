@@ -25,6 +25,7 @@ namespace MolvenoLakeResort.Library.Helpers
     {
         private static List<Dish> dishes;
         private static List<Ingredient> ingredients;
+        private static List<Reservation> reservations;
         private static readonly Random random = new Random();
         private static readonly string[] peopleNames = { "Erasmo", "Wendell", "Phillip", "Tonia", "Ocie", "Tara", "Emmaline", "Aurelia", "Arthur", "Brande", "Dreama", "Manuel", "Angelica", "Zack", "Kristy", "Marcelene", "Yun", "Cory", "Verlie", "Josphine", "Danuta", "Ina", "Reggie", "Alden", "Guillermina", "Haley", "Marti", "Mickey", "Sal", "Linsey", "Jarod", "Tamra", "Hester", "Royal", "Kenny", "Josefine", "Lucile", "Kayleigh", "Dianne", "Belle", "Ofelia", "Jannet", "Adell", "Roselle", "Kaitlin", "Gennie", "Denese", "Harlan", "Yael", "Jong" };
 
@@ -37,6 +38,83 @@ namespace MolvenoLakeResort.Library.Helpers
         {
             return ingredients ?? (ingredients = ConvertCsv(path).ToIngredients());
         }
+
+        public static List<Reservation> Reservations => reservations ?? (reservations = new List<Reservation>
+        {
+            new Reservation
+            {
+                Name = "Fam. Johnson",
+                ReservationNumber = "MOLV-HGDF",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 2,
+                FloorLevel = 1,
+                ShowPrice = false,
+                BookingNumber = "2018-0401DF",
+                BookerReference = "MyRef",
+                BookerType = 1
+            },
+            new Reservation
+            {
+                Name = "Fam. Peters",
+                ReservationNumber = "MOLV-KITRS",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 4,
+                FloorLevel = 2,
+                ShowPrice = true,
+                BookingNumber = "2018-0401JK",
+                BookerReference = "MyRef",
+                BookerType = 2
+            },
+            new Reservation
+            {
+                Name = "Fam. Michaels",
+                ReservationNumber = "MOLV-KILA",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 6,
+                FloorLevel = 1,
+                ShowPrice = false,
+                BookingNumber = "2018-0401LP",
+                BookerReference = "MyRef",
+                BookerType = 1
+            },
+            new Reservation
+            {
+                Name = "Fam. Stevenson",
+                ReservationNumber = "MOLV-VHUR",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 2,
+                FloorLevel = 1,
+                ShowPrice = true,
+                BookingNumber = "2018-0401WE",
+                BookerReference = "MyRef",
+                BookerType = 2
+            },
+            new Reservation
+            {
+                Name = "Fam. King",
+                ReservationNumber = "MOLV-HSAY",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 4,
+                FloorLevel = 0,
+                ShowPrice = true,
+                BookingNumber = "2018-0401XS",
+                BookerReference = "MyRef",
+                BookerType = 1
+            },
+            new Reservation
+            {
+                Name = "Fam. O'Brien",
+                ReservationNumber = "MOLV-PLOI",
+                Start = DateTimeOffset.Now,
+                NuberOfPersons = 8,
+                FloorLevel = 1,
+                ShowPrice = false,
+                BookingNumber = "2018-0401CF",
+                BookerReference = "MyRef",
+                BookerType = 1
+            },
+        });
+
         public static List<Dish> ToDishes(this List<MolvenoIngredient> molvenoIngredients)
         {
             if (dishes == null)
@@ -115,12 +193,7 @@ namespace MolvenoLakeResort.Library.Helpers
         {
             return molvenoIngredients.Select(m => m.ToIngredient()).ToList();
         }
-
-        public static string ToCurrency(this decimal value)
-        {
-            return $"€ {value:N2}";
-        }
-
+        
         private static Ingredient ToIngredient(this MolvenoIngredient molvenoIngredient)
         {
             return new Ingredient

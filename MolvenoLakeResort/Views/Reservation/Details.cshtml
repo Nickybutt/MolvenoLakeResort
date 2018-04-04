@@ -1,0 +1,82 @@
+﻿@using System.Globalization
+@using MolvenoLakeResort.Library.Helpers
+@model MolvenoLakeResort.Library.Core.Reservation
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@using (Html.BeginForm("Save", "Reservation", new { id = Model.Id }))
+{
+    <table>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Name)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Name) : Html.TextBoxFor(m => m.Name))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.ReservationNumber)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.ReservationNumber):Html.EditorFor(m=>m.ReservationNumber))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.NuberOfPersons)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.NuberOfPersons.ToString()) : Html.EditorFor(m => m.NuberOfPersons))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.Start)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.Start.ToDateTime()) : Html.EditorFor(m => m.Start))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.BookerReference)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.BookerReference.ToString()) : Html.TextBoxFor(m => m.BookerReference))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.BookingNumber)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.BookingNumber.ToString()) : Html.TextBoxFor(m => m.BookingNumber))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.FloorLevel)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.FloorLevel.ToString()) : Html.TextBoxFor(m => m.FloorLevel))
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50%">@Html.LabelFor(m => m.ShowPrice)</td>
+            <td>
+                @(ViewBag.ReadOnly ? Html.Label(@Model.ShowPrice.ToString()) : Html.EditorFor(m => m.ShowPrice))
+            </td>
+        </tr>
+        <tr>
+            @if (ViewBag.ReadOnly)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-dark" })
+                    &nbsp;
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-dark" })
+                    &nbsp;
+                    @Html.ActionLink("New", "Create", new { }, new { @class = "btn btn-dark" })
+                </td>
+            }
+            else
+            {
+                <td>
+                    <input type="submit" class="btn btn-dark" title="Save" value="Save"></input>
+                    &nbsp;
+                    @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-dark" })
+                </td>
+            }
+        </tr>
+    </table>
+}
