@@ -1,9 +1,5 @@
-﻿@using X.PagedList
+﻿@using MolvenoLakeResort.Library.Helpers
 @model MolvenoLakeResort.Library.Core.Dish
-@{
-ViewBag.ShowHeader=false;
-
-}
 
     @if (@Model.MinimumNumberOfPersons > 1)
     {
@@ -12,21 +8,17 @@ ViewBag.ShowHeader=false;
         </div></div>
     }
    
+        <div class="row">
+            <div class="col-md-4">
+                @Html.ActionLink(Model.Name,"Details", new { Id = Model.Id })
+            </div>
+            <div class="col-md-4">
+                @Model.SuggestedRetailPrice.ToCurrency()
+            </div>
+            <div class="col-md-4">
+                @Model.PriceInEuros.ToCurrency()
+            </div>
+        </div>
     <div class="row">
-        <div class="col-md-4">
-            @Model.Name
-        </div>
-        <div class="col-md-4">
-            € @Model.SuggestedRetailPrice
-        </div>
-        <div class="col-md-4">
-            € @Model.PriceInEuros
-        </div>
+       @* @{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients);}*@
     </div>
-<div class="row">
-    @foreach (var i in @Model.Ingredients)
-    {
-    <i><div class="col-md-1">@i.Name </div></i>
-    }
-    @*@{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients.ToPagedList());}*@
-</div>

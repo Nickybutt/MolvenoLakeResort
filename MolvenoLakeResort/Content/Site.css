@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -7,6 +9,27 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.typeface {
+    font-family: 'Lobster', cursive;
+}
+
+.jumbotron {
+    /* Background settings */
+    background-image: url("/Content/Images/background_image.jpg");
+    background-size: cover;
+    background-position: 100% 40%;
+    opacity: 0.9;
+
+    /* Font */
+    color: white;
+
+    min-height: 300px;
+}
+
+.molveno_logo {
+    width: 100%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

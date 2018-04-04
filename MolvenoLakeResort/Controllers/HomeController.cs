@@ -13,12 +13,6 @@ namespace MolvenoLakeResort.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
 
         public ActionResult Contact()
         {
@@ -30,6 +24,38 @@ namespace MolvenoLakeResort.Controllers
         public ActionResult Info()
         {
             ViewBag.Message = "Your application info page.";
+
+            return View();
+
+        }
+
+        public ActionResult Restaurant()
+        {
+            ViewBag.Message = "Your application restaurant page.";
+
+            return View();
+
+        }
+
+        public ActionResult Menu()
+        {
+            ViewBag.Message = "Your application Menu page.";
+
+            return View();
+
+        }
+
+        public ActionResult Dish()
+        {
+            ViewBag.Message = "Your application Dish page.";
+
+            return View();
+
+        }
+
+        public ActionResult Ingredienth()
+        {
+            ViewBag.Message = "Your application Ingredient page.";
 
             return View();
 

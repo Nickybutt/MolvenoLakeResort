@@ -1,0 +1,78 @@
+﻿@model MolvenoLakeResort.Library.Core.Dish
+
+@{
+    ViewBag.Title = "Details Dishes";
+}
+
+<h2>Details Dish - @Html.Label(Model.Name)</h2>
+
+
+<div class="row">
+    <div class="col-md-4">@Html.LabelFor(m => m.Name)</div>
+    <div class="col-md-4">
+        @if (ViewBag.ReadOnly)
+        {
+            @Html.Label(Model.Name)
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.Name)
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">@Html.LabelFor(m => m.PriceInEuros)</div>
+    <div class="col-md-4">
+        @if (ViewBag.ReadOnly)
+        {
+            @Html.Label(Model.PriceInEuros.ToString("C"))
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.PriceInEuros)
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">@Html.LabelFor(m => m.SuggestedRetailPrice)</div>
+    <div class="col-md-4">
+        @if (ViewBag.ReadOnly)
+        {
+            @Html.Label(Model.SuggestedRetailPrice.ToString("C"))
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.PriceInEuros)
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">@Html.LabelFor(m => m.MinimumNumberOfPersons)</div>
+    <div class="col-md-4">
+        @if (ViewBag.ReadOnly)
+        {
+            @Html.Label(Model.MinimumNumberOfPersons.ToString())
+        }
+        else
+        {
+            @Html.TextBoxFor(m => m.MinimumNumberOfPersons)
+        }
+    </div>
+</div>
+
+<hr />
+<table>
+    <thead>Ingredients</thead>
+
+    @foreach (var ingredient in Model.Ingredients)
+    {
+        <tr>
+            <td style="width:50%;">@Html.Label(ingredient.Name)</td>
+            <td style="width:50%;">@Html.Label(ingredient.CostPrice.ToString("C"))</td>
+        </tr>
+    }
+
+
+    @*@{Html.RenderPartial("Partial/_PartialIngredient", @Model.Ingredients); }*@
+
+</table>

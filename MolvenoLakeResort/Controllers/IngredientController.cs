@@ -25,11 +25,10 @@ namespace MolvenoLakeResort.Controllers
 {
     public class IngredientController : Controller
     {
-        private static readonly List<Ingredient> ingredients =
-            Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToIngredients();
+        private static readonly List<Ingredient> ingredients = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToIngredients();
 
         private static Guid currentId;
-        
+
         // GET: Ingredient
         [HttpGet]
         public ActionResult Index(int? page)
@@ -39,6 +38,16 @@ namespace MolvenoLakeResort.Controllers
             var model = ingredients.Where(i => i.Deleted == false).ToPagedList(pageNumber, 10);
             return View(model);
         }
+
+
+        public ActionResult CoreIndex(int? page)
+        {
+            var pageNumber = page ?? 1;
+            var model = Converter.ConvertCsv(ConfigurationManager.AppSettings.GetExcelPath()).ToPagedList(pageNumber, 10);
+
+            return View(model);
+        }
+
 
         // GET: Ingredient/Details/id
         [HttpGet]
