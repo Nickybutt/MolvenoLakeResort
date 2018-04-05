@@ -100,6 +100,7 @@ namespace MolvenoLakeResort.Controllers
             var oldIngredient = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).FirstOrDefault(i => i.Id == id);
             oldIngredient.Deleted = true;
             ViewBag.ShowHeader = true;
+
             var model = DataHelper.Ingredients(ConfigurationManager.AppSettings.GetExcelPath()).Where(i => i.Deleted == false).ToPagedList(1, 10);
             return View("Index", model);
         }

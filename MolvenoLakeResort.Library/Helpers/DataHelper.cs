@@ -226,9 +226,9 @@ namespace MolvenoLakeResort.Library.Helpers
                     ArticleNumber = properties[3],
                     Unit = properties[4],
                     Quantity = properties[5],
-                    Price = Convert.ToDecimal(properties[6]),
+                    Price = Convert.ToDecimal(properties[6])/100,
                     Vat = properties[7],
-                    PricePerUnit = Convert.ToDecimal(properties[8]),
+                    PricePerUnit = Convert.ToDecimal(properties[8])/100,
                     Category = properties[9],
                     Stock = Convert.ToInt32(properties[10]),
                     StockWorth = Convert.ToDecimal(properties[11])
