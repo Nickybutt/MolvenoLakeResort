@@ -14,6 +14,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using MolvenoLakeResort.Library.Helpers;
 
 #endregion
 
@@ -21,7 +22,6 @@ namespace MolvenoLakeResort.Library.Authentication
 {
     public class User
     {
-
         public User()
         {
             Id = Guid.NewGuid();
@@ -50,12 +50,13 @@ namespace MolvenoLakeResort.Library.Authentication
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required.")]
+
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Confirm password is required.")]
         [Compare("Password", ErrorMessage = "Passwords do not match. Please try again.")]
         public string ConfirmPassword { get; set; }
-        
+
         public int UserLevel { get; set; }
 
         public bool? RememberMe { get; set; }

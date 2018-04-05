@@ -1,7 +1,7 @@
 ﻿#region ...   [Header]   ...
 
 // Solution      ::    MolvenoLakeResort
-// Filename      ::    MolvenoLakeResort.Data.RDSContext.cs
+// Filename      ::    MolvenoLakeResort.Data.MLRContext.cs
 // Created On    ::    28/03/2018 11:15 AM
 // Altered On    ::    28/03/2018 11:15 AM
 // By            ::    Arjan Crielaard
@@ -11,21 +11,24 @@
 #region ...   [Usings]   ...
 
 using System.Data.Entity;
+using MolvenoLakeResort.Data.Items;
 
 #endregion
 
 namespace MolvenoLakeResort.Data
 {
-    public class RDSContext : DbContext
+    public class MLRContext : DbContext
     {
-        public RDSContext()
-            : base(Helpers.GetRDSConnectionString())
+        public MLRContext()
+            : base(Helpers.GetRdsConnectionString())
         {
         }
 
-        public static RDSContext Create()
+        public static MLRContext Create()
         {
-            return new RDSContext();
+            return new MLRContext();
         }
+
+        public DbSet<DataUser> DataUsers { get; set; }
     }
 }

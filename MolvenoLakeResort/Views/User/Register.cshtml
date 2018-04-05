@@ -8,18 +8,20 @@
 
 @using (Html.BeginForm("Register", "User"))
 {
-<div class="container">
+    @Html.AntiForgeryToken()
+
+    <div class="container">
     <div class="row">
         <div class="col-md-5">@Html.LabelFor(m => m.Email)</div>
-        <div class="col-md-7">@Html.EditorFor(m => m.Email)</div>
+        <div class="col-md-7">@Html.TextBoxFor(m => m.Email,new{style="width:270px;"})</div>
     </div>
     <div class="row">
         <div class="col-md-5">@Html.LabelFor(m => m.Password)</div>
-        <div class="col-md-7">@Html.PasswordFor(m => m.Password)</div>
+        <div class="col-md-7">@Html.PasswordFor(m => m.Password, new { style = "width:270px;" })</div>
     </div>
     <div class="row">
         <div class="col-md-5">@Html.LabelFor(m => m.ConfirmPassword)</div>
-        <div class="col-md-7">@Html.PasswordFor(m => m.ConfirmPassword)</div>
+        <div class="col-md-7">@Html.PasswordFor(m => m.ConfirmPassword, new { style = "width:270px;" })</div>
     </div>
     <div class="row">
         <div class="col-md-12">

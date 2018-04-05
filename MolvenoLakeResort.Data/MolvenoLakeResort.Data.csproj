@@ -49,13 +49,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers.cs" />
+    <Compile Include="Migrations\201804051021233_DataUser.cs" />
+    <Compile Include="Migrations\201804051021233_DataUser.Designer.cs">
+      <DependentUpon>201804051021233_DataUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RDSContext.cs" />
+    <Compile Include="MLRContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MolvenoLakeResort.Data.Items\MolvenoLakeResort.Data.Items.csproj">
+      <Project>{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}</Project>
+      <Name>MolvenoLakeResort.Data.Items</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804051021233_DataUser.resx">
+      <DependentUpon>201804051021233_DataUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

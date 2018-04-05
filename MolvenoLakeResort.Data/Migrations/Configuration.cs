@@ -5,14 +5,14 @@ namespace MolvenoLakeResort.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MolvenoLakeResort.Data.RDSContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MolvenoLakeResort.Data.MLRContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MolvenoLakeResort.Data.RDSContext context)
+        protected override void Seed(MolvenoLakeResort.Data.MLRContext context)
         {
             //  This method will be called after migrating to the latest version.
 

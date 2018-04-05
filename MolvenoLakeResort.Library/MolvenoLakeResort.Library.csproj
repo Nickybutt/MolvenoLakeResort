@@ -8,4 +8,8 @@
     <Folder Include="Enumeration\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MolvenoLakeResort.Data.Items\MolvenoLakeResort.Data.Items.csproj" />
+  </ItemGroup>
+
 </Project>

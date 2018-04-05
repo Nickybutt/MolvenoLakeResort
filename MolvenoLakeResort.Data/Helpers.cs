@@ -1,28 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region ...   [Header]   ...
+
+// Solution      ::    MolvenoLakeResort
+// Filename      ::    MolvenoLakeResort.Data.Helpers.cs
+// Created On    ::    03/04/2018 2:15 PM
+// Altered On    ::    05/04/2018 11:26 AM
+// By            ::    Arjan Crielaard
+
+#endregion
 
 namespace MolvenoLakeResort.Data
 {
     public class Helpers
     {
-        public static string GetRDSConnectionString()
+        public static string GetRdsConnectionString()
         {
-            var appConfig = ConfigurationManager.AppSettings;
-
-            string dbname = "lakeresort";
+            var dbname = "lakeresort";
 
             if (string.IsNullOrEmpty(dbname)) return null;
 
-            string username = "master";
-            string password = "M4st3r!#";
-            string hostname = "molveno.crempvy9jvuy.eu-west-2.rds.amazonaws.com";
-            string port = "3306";
+            var username = "root";
+            var password = "Breaking#88";
+            var hostname = "localhost";
+            var port = "3306";
 
-            return "Data Source=" + hostname + ";Initial Catalog=" + dbname + ";User ID=" + username + ";Password=" + password + ";";
+            return $"Server={hostname};Database={dbname};Uid={username};Pwd={password};";
         }
     }
 }
