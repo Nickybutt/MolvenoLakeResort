@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\DataConverter.cs" />
+    <Compile Include="Core\UserDataConverter.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
