@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Core\BaseObject.cs" />
     <Compile Include="Core\IdentifiableBaseObject.cs" />
+    <Compile Include="DataReservation.cs" />
     <Compile Include="DataUser.cs" />
     <Compile Include="Interfaces\IDeletable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

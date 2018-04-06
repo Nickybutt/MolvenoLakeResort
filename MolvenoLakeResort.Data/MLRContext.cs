@@ -12,7 +12,7 @@
 
 using System.Data.Entity;
 using MolvenoLakeResort.Data.Items;
-using MySql.Data.Entity;
+//using MySql.Data.Entity;
 
 #endregion
 
@@ -26,6 +26,7 @@ namespace MolvenoLakeResort.Data
         }
 
         public DbSet<DataUser> DataUsers { get; set; }
+        public DbSet<DataReservation> DataReservations { get; set; }
 
         public static MlrContext Create()
         {
