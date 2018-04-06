@@ -24,5 +24,6 @@ namespace MolvenoLakeResort.Data.Items
         public string Email { get; set; }
         public bool RememberMe { get; set; }
         public int UserLevel { get; set; }
+        public bool Deleted { get; set; }
     }
 }

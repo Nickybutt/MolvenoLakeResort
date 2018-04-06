@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5872E124-4B5D-48FC-8B76-9712B1537332}</ProjectGuid>
+    <ProjectGuid>{3F664C1C-ED32-4D30-A3B5-2DE1FD7805CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MolvenoLakeResort.Library.Authentication</RootNamespace>
-    <AssemblyName>MolvenoLakeResort.Library.Authentication</AssemblyName>
+    <RootNamespace>MolvenoLakeResort.Data.Services</RootNamespace>
+    <AssemblyName>MolvenoLakeResort.Data.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -41,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="User.cs" />
+    <Compile Include="Core\UserDataConverter.cs" />
+    <Compile Include="Interfaces\IService.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,10 +57,23 @@
       <Project>{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}</Project>
       <Name>MolvenoLakeResort.Data.Items</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MolvenoLakeResort.Data\MolvenoLakeResort.Data.csproj">
+      <Project>{B5694D86-AEF4-40B8-9413-9BADAD73C8E6}</Project>
+      <Name>MolvenoLakeResort.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MolvenoLakeResort.Library.Authentication\MolvenoLakeResort.Library.Authentication.csproj">
+      <Project>{5872E124-4B5D-48FC-8B76-9712B1537332}</Project>
+      <Name>MolvenoLakeResort.Library.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MolvenoLakeResort.Library\MolvenoLakeResort.Library.csproj">
       <Project>{5CAC21DE-B74E-414E-9802-69DB79DFC82B}</Project>
       <Name>MolvenoLakeResort.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

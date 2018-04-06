@@ -3,7 +3,7 @@ namespace MolvenoLakeResort.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DataUser : DbMigration
+    public partial class AddUsers : DbMigration
     {
         public override void Up()
         {
@@ -17,6 +17,7 @@ namespace MolvenoLakeResort.Data.Migrations
                         Email = c.String(),
                         RememberMe = c.Boolean(nullable: false),
                         UserLevel = c.Int(nullable: false),
+                        Deleted = c.Boolean(nullable: false),
                         Name = c.String(),
                         Created = c.DateTimeOffset(nullable: false, precision: 7),
                         Altered = c.DateTimeOffset(nullable: false, precision: 7),

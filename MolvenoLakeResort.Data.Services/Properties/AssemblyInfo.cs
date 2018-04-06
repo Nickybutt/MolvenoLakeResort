@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MolvenoLakeResort.Data")]
+[assembly: AssemblyTitle("MolvenoLakeResort.Data.Services")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MolvenoLakeResort.Data")]
+[assembly: AssemblyProduct("MolvenoLakeResort.Data.Services")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b5694d86-aef4-40b8-9413-9badad73c8e6")]
+[assembly: Guid("3f664c1c-ed32-4d30-a3b5-2de1fd7805cf")]
 
 // Version information for an assembly consists of the following four values:
 //
