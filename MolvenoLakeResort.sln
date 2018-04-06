@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort.Library.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort.Data.Items", "MolvenoLakeResort.Data.Items\MolvenoLakeResort.Data.Items.csproj", "{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MolvenoLakeResort.Data.Service", "MolvenoLakeResort.Data.Service\MolvenoLakeResort.Data.Service.csproj", "{1D6F65AE-8F11-428B-A112-955F268EF08F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D1CF355-C4A7-4DF4-B14A-8917EEE41B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6F65AE-8F11-428B-A112-955F268EF08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6F65AE-8F11-428B-A112-955F268EF08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6F65AE-8F11-428B-A112-955F268EF08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6F65AE-8F11-428B-A112-955F268EF08F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
