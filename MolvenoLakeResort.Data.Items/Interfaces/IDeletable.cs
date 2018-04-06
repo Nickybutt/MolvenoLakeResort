@@ -12,5 +12,6 @@ namespace MolvenoLakeResort.Data.Items.Interfaces
 {
     public interface IDeletable
     {
+        bool Deleted { get; set; }
     }
 }

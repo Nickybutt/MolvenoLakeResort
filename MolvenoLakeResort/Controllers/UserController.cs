@@ -36,7 +36,15 @@ namespace MolvenoLakeResort.Controllers
         [HttpPost]
         public ActionResult Register(User model)
         {
-            return model.IsValid ? View("Index") : View();
+            if (model.IsValid)
+            {
+               Response.SetCookieValue("login", model.Email);
+                return View("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public void Login()

@@ -7,13 +7,13 @@ namespace MolvenoLakeResort.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class DataUser : IMigrationMetadata
+    public sealed partial class AddUsers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DataUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUsers));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804051021233_DataUser"; }
+            get { return "201804051334217_Add Users"; }
         }
         
         string IMigrationMetadata.Source

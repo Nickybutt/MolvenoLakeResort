@@ -15,12 +15,13 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using MolvenoLakeResort.Library.Helpers;
+using MolvenoLakeResort.Library.Interfaces;
 
 #endregion
 
 namespace MolvenoLakeResort.Library.Authentication
 {
-    public class User
+    public class User:IResortItem
     {
         public User()
         {
@@ -50,7 +51,6 @@ namespace MolvenoLakeResort.Library.Authentication
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Password is required.")]
-
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Confirm password is required.")]
@@ -60,5 +60,6 @@ namespace MolvenoLakeResort.Library.Authentication
         public int UserLevel { get; set; }
 
         public bool? RememberMe { get; set; }
+        public string Name { get; set; }
     }
 }

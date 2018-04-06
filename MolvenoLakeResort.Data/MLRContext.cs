@@ -1,9 +1,9 @@
 ﻿#region ...   [Header]   ...
 
 // Solution      ::    MolvenoLakeResort
-// Filename      ::    MolvenoLakeResort.Data.MLRContext.cs
-// Created On    ::    28/03/2018 11:15 AM
-// Altered On    ::    28/03/2018 11:15 AM
+// Filename      ::    MolvenoLakeResort.Data.MlrContext.cs
+// Created On    ::    05/04/2018 2:23 PM
+// Altered On    ::    05/04/2018 2:23 PM
 // By            ::    Arjan Crielaard
 
 #endregion
@@ -12,23 +12,24 @@
 
 using System.Data.Entity;
 using MolvenoLakeResort.Data.Items;
+using MySql.Data.Entity;
 
 #endregion
 
 namespace MolvenoLakeResort.Data
 {
-    public class MLRContext : DbContext
+    public class MlrContext : DbContext
     {
-        public MLRContext()
-            : base(Helpers.GetRdsConnectionString())
+        public MlrContext()
+            : base()
         {
-        }
-
-        public static MLRContext Create()
-        {
-            return new MLRContext();
         }
 
         public DbSet<DataUser> DataUsers { get; set; }
+
+        public static MlrContext Create()
+        {
+            return new MlrContext();
+        }
     }
 }
